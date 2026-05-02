@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\Admin\PackageController as AdminPackage;
+use App\Http\Controllers\Admin\PaymentController as AdminPayment;
 use App\Http\Controllers\Admin\SettingController as AdminSetting;
 use App\Http\Controllers\Admin\SubscriberController as AdminSubscriber;
+use App\Http\Controllers\Admin\SubscriptionController as AdminSubscription;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Public\CheckoutController;
@@ -149,6 +151,9 @@ Route::middleware('auth')->group(function () {
         Route::put('/packages/{package}', [AdminPackage::class, 'update'])->name('packages.update');
         Route::delete('/packages/{package}', [AdminPackage::class, 'destroy'])->name('packages.destroy');
         Route::post('/packages/{package}/toggle', [AdminPackage::class, 'toggle'])->name('packages.toggle');
+
+        Route::get('/subscriptions', [AdminSubscription::class, 'index'])->name('subscriptions.index');
+        Route::get('/payments', [AdminPayment::class, 'index'])->name('payments.index');
 
         Route::get('/settings', [AdminSetting::class, 'index'])->name('settings.index');
         Route::post('/settings', [AdminSetting::class, 'update'])->name('settings.update');
