@@ -32,7 +32,17 @@ Route::get('/', function (\Illuminate\Http\Request $request) {
     if ($request->attributes->get('resolved_user')) {
         return app(PublicPage::class)->show($request);
     }
-    return Inertia::render('welcome');
+
+    $packages = \App\Models\Package::where('is_active', true)
+        ->where('tag', '!=', 'trial')
+        ->orderBy('sort_order')
+        ->get(['id', 'name', 'slug', 'description', 'price', 'billing_cycle', 'tag',
+            'max_landing_pages', 'max_products',
+            'can_use_drag_drop', 'can_connect_courier', 'can_print_awb', 'can_use_custom_domain']);
+
+    return Inertia::render('welcome', [
+        'packages' => $packages,
+    ]);
 })->name('home');
 
 // Public landing page rendering (subdomain or custom domain)
