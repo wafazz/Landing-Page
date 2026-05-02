@@ -1,0 +1,43 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite"
+    },
+    "devDependencies": {
+        "@heroicons/react": "^2.2.0",
+        "@types/nprogress": "^0.2.3",
+        "apexcharts": "^5.10.6",
+        "chart.js": "^4.5.1",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^3.0.0",
+        "nprogress": "^0.2.0",
+        "react-apexcharts": "^2.1.0",
+        "react-chartjs-2": "^5.3.1",
+        "vite": "^8.0.0"
+    },
+    "dependencies": {
+        "@grapesjs/react": "^2.0.0",
+        "@inertiajs/react": "^3.0.3",
+        "@tinymce/tinymce-react": "^6.3.0",
+        "@types/node": "^25.6.0",
+        "@types/react": "^19.2.14",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^6.0.1",
+        "admin-lte": "^4.0.0-rc7",
+        "axios": "^1.15.2",
+        "bootstrap": "^5.3.8",
+        "bootstrap-icons": "^1.13.1",
+        "grapesjs": "^0.22.16",
+        "grapesjs-blocks-basic": "^1.0.2",
+        "grapesjs-preset-webpage": "^1.0.3",
+        "react": "^19.2.5",
+        "react-bootstrap": "^2.10.10",
+        "react-dom": "^19.2.5",
+        "sass": "^1.99.0",
+        "tinymce": "^8.5.0",
+        "typescript": "^6.0.3"
+    }
+}

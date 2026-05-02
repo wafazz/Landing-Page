@@ -1,0 +1,175 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import "admin-lte/dist/css/adminlte.min.css";
+@import "apexcharts/dist/apexcharts.css";
+
+#nprogress .bar {
+    background: #0d6efd !important;
+    height: 3px !important;
+}
+
+body {
+    font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.auth-bg {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 50%, #2c3e50 100%);
+}
+
+.auth-card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.brand-text {
+    font-weight: 700;
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.brand-text:hover {
+    color: #0a58ca;
+}
+
+.toast-stack {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1080;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Stat card with icon box */
+.stat-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.stat-card .icon-box {
+    transition: transform 0.3s ease;
+}
+.stat-card:hover .icon-box {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* Quick action card */
+.quick-action-card {
+    transition: all 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+.quick-action-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1) !important;
+    color: inherit;
+}
+.quick-action-card .icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+/* Card title icon styling */
+.card-title-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+/* Mobile sidebar overlay */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1039;
+    cursor: pointer;
+}
+
+/* Sidebar toggle button */
+.app-header .nav-link.sidebar-toggle {
+    padding: 0.5rem 0.75rem;
+    color: #495057;
+    transition: color 0.15s, background-color 0.15s;
+    border-radius: 6px;
+}
+.app-header .nav-link.sidebar-toggle:hover {
+    color: #0d6efd;
+    background-color: rgba(13, 110, 253, 0.08);
+}
+
+/* Mobile: sidebar hidden by default, slides in when open */
+@media (max-width: 991.98px) {
+    body .app-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    body.sidebar-open .app-sidebar {
+        transform: translateX(0);
+    }
+}
+
+/* Desktop: collapse to mini-sidebar */
+@media (min-width: 992px) {
+    body.sidebar-collapse .app-sidebar {
+        margin-left: -250px;
+    }
+    body.sidebar-collapse .app-main,
+    body.sidebar-collapse .app-footer {
+        margin-left: 0 !important;
+    }
+    .app-sidebar,
+    .app-main,
+    .app-footer {
+        transition: margin-left 0.3s ease;
+    }
+}
+
+/* Sidebar tweaks */
+.app-sidebar .nav-link.active {
+    background-color: rgba(13, 110, 253, 0.15);
+    color: #0d6efd !important;
+    border-left: 3px solid #0d6efd;
+}
+
+.app-sidebar .nav-link {
+    transition: all 0.2s;
+}
+
+.app-sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Counter animation */
+.counter {
+    display: inline-block;
+}
