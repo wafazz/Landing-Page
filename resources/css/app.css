@@ -115,6 +115,9 @@ body {
     cursor: pointer;
 }
 
+/* Prevent horizontal scroll on mobile */
+html, body { overflow-x: hidden; }
+
 /* Sidebar toggle button */
 .app-header .nav-link.sidebar-toggle {
     padding: 0.5rem 0.75rem;
@@ -127,15 +130,56 @@ body {
     background-color: rgba(13, 110, 253, 0.08);
 }
 
-/* Mobile: sidebar hidden by default, slides in when open */
+/* Mobile: sidebar hidden by default, slides in as overlay when open */
 @media (max-width: 991.98px) {
     body .app-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 250px;
+        z-index: 1040;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
     }
     body.sidebar-open .app-sidebar {
         transform: translateX(0);
     }
+    body .app-main,
+    body .app-footer {
+        margin-left: 0 !important;
+    }
+    body .app-content,
+    body .app-content-header {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    body .container-fluid {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    /* Auto horizontal-scroll for tables inside cards */
+    .card-body > .table,
+    .card > .table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .card-body.p-0 .table { white-space: nowrap; }
+
+    /* Stack form rows tightly */
+    .row.g-2 > [class*="col-"],
+    .row.g-3 > [class*="col-"] {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Smaller heading on mobile */
+    h3 { font-size: 1.4rem; }
+    .card-title { font-size: 1rem; }
+
+    /* SmallBox + KPI cards full width */
+    .small-box .icon { font-size: 56px; }
 }
 
 /* Desktop: collapse to mini-sidebar */

@@ -14,7 +14,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.tsx'])
         @inertiaHead
     </head>
-    <body>
+    <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
         @inertia
     </body>
 </html>
